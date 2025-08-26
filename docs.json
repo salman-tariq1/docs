@@ -9,7 +9,7 @@
   },
   "favicon": "/favicon.svg",
   "openapi": {
-    "source": "/api-reference/accounts.yaml",
+    "source": "api-reference/accounts.yaml",
     "directory": "api-reference"
   },
   "navigation": {
