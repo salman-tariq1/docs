@@ -8,6 +8,10 @@
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
+  "openapi": {
+    "source": "/api-reference/accounts.yaml",
+    "directory": "api-reference"
+  },
   "navigation": {
     "tabs": [
       {
@@ -33,7 +37,7 @@
           {
             "group": "Endpoint",
             "pages": [
-              "api-reference/endpoint/create"
+              "api-reference/endpoint/auth"
             ]
           }
         ]
