@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://marketplace-as-a-service.herokuapp.com/index.php/api"
     }
   ],
   "security": [
@@ -19,54 +19,15 @@
     }
   ],
   "paths": {
-    "/plants": {
-      "get": {
-        "description": "Returns all plants from the system that the user has access to",
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "The maximum number of results to return",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Plant response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Plant"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      },
+    "/oauth2": {
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "Authenticate the user with the system and obtain the access_token. Request and Response Content-Type would be JSON.",
         "requestBody": {
-          "description": "Plant to add to the store",
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+                "$ref": "#/components/schemas/Auth"
               }
             }
           },
@@ -154,41 +115,27 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
+      "Auth": {
         "required": [
-          "name"
+          "username",
+          "password",
+          "grant_type"
         ],
         "type": "object",
         "properties": {
-          "name": {
-            "description": "The name of the plant",
+          "username": {
+            "description": "",
             "type": "string"
           },
-          "tag": {
-            "description": "Tag to specify the type",
+          "password": {
+            "description": "",
+            "type": "string"
+          },
+          "grant_type": {
+            "description": "It is used by confidential and public clients to exchange an authorization code for an access token. It would be “password”.",
             "type": "string"
           }
         }
-      },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
       },
       "Error": {
         "required": [
