@@ -1,0 +1,118 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenAPI Plant Store",
+    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "license": {
+      "name": "MIT"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://marketplace-as-a-service.herokuapp.com"
+    }
+  ],
+  "paths": {
+    "/index.php/api/oauth2": {
+      "post": {
+        "description": "Authenticate the user with the system and obtain the access_token. Request and Response Content-Type would be JSON.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Auth"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "access_token": {
+                      "type": "string",
+                      "description": "The access token to authenticate requests."
+                    },
+                    "expires_in": {
+                      "type": "integer",
+                      "description": "Time in seconds until the access token expires."
+                    },
+                    "token_type": {
+                      "type": "string",
+                      "description": "The type of the token (usually 'bearer')."
+                    },
+                    "refresh_token": {
+                      "type": "string",
+                      "description": "The refresh token used to obtain a new access token."
+                    },
+                    "refresh_expires_in": {
+                      "type": "integer",
+                      "description": "Time in seconds until the refresh token expires."
+                    },
+                    "fuse_client_id_seq": {
+                      "type": ["string", "null"],
+                      "description": "Client ID sequence, can be null."
+                    }
+                  },
+                  "example": {
+                    "access_token": "93019854-6B88-4997-9179-C1C50E7D2E9D",
+                    "expires_in": 3600,
+                    "token_type": "bearer",
+                    "refresh_token": "2495C12E-AFFA-40AD-8B91-61D7CEE3D5DC",
+                    "refresh_expires_in": 18000,
+                    "fuse_client_id_seq": null
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Please provide correct username and password"
+          },
+          "404": {
+            "description": "Could Not Find Resource"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Auth": {
+        "required": [
+          "username",
+          "password",
+          "grant_type"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "description": "",
+            "type": "string"
+          },
+          "password": {
+            "description": "",
+            "type": "string"
+          },
+          "grant_type": {
+            "description": "It is used by confidential and public clients to exchange an authorization code for an access token. It would be 'password'.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
