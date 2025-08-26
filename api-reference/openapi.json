@@ -13,11 +13,6 @@
       "url": "https://marketplace-as-a-service.herokuapp.com/index.php/api"
     }
   ],
-  "security": [
-    {
-      "bearerAuth": []
-    }
-  ],
   "paths": {
     "/oauth2": {
       "post": {
