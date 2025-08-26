@@ -54,8 +54,8 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Dakota Site",
+      "href": "https://www.dakota.com/"
     }
   },
   "contextual": {
