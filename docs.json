@@ -7,6 +7,9 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
+  "css": [
+    "custom.css"
+  ],
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
@@ -17,6 +20,20 @@
             "group": "Get started",
             "pages": [
               "index"
+            ]
+          },
+          {
+            "group": "Fields",
+            "pages": [
+              "fields/Account",
+              "fields/Contact",
+              "fields/Conference",
+              "fields/Investment",
+              "fields/InvestmentStrategy",
+              "fields/ManagerPresentation",
+              "fields/MetroArea",
+              "fields/MarketplaceSearches",
+              "fields/MemberComments"
             ]
           }
         ]
@@ -32,87 +49,57 @@
           },
           {
             "group": "Accounts API",
-            "openapi": {
-              "source": "api-reference/accounts.yaml"
-            }
+            "pages": [
+              "api-reference/endpoint/accounts"
+            ]
           },
           {
             "group": "Contacts API",
-            "openapi": {
-              "source": "api-reference/contacts.yaml"
-            }
+            "pages": [
+              "api-reference/endpoint/contacts"
+            ]
           },
           {
             "group": "Conference API",
-            "openapi": {
-              "source": "api-reference/conference__c.yaml"
-            }
-          },
-          {
-            "group": "Custom Account Contact Relation API",
-            "openapi": {
-              "source": "api-reference/custom_accountcontactrelation.yaml"
-            }
-          },
-          {
-            "group": "Dakota Content API",
-            "openapi": {
-              "source": "api-reference/dakota_content__c.yaml"
-            }
-          },
-          {
-            "group": "Dakota News API",
-            "openapi": {
-              "source": "api-reference/dakota_news__c.yaml"
-            }
+            "pages": [
+              "api-reference/endpoint/conference"
+            ]
           },
           {
             "group": "Investment API",
-            "openapi": {
-              "source": "api-reference/investment__c.yaml"
-            }
+            "pages": [
+              "api-reference/endpoint/investment"
+            ]
           },
           {
             "group": "Investment Strategy API",
-            "openapi": {
-              "source": "api-reference/investment_strategy__c.yaml"
-            }
+            "pages": [
+              "api-reference/endpoint/investment-strategy"
+            ]
           },
           {
             "group": "Manager Presentation API",
-            "openapi": {
-              "source": "api-reference/manager_presentation__c.yaml"
-            }
-          },
-          {
-            "group": "Marketplace Searches API",
-            "openapi": {
-              "source": "api-reference/marketplace_searches__c.yaml"
-            }
-          },
-          {
-            "group": "Member Comments API",
-            "openapi": {
-              "source": "api-reference/member_comments__c.yaml"
-            }
+            "pages": [
+              "api-reference/endpoint/manager-presentation"
+            ]
           },
           {
             "group": "Metro Area API",
-            "openapi": {
-              "source": "api-reference/MetroArea.yaml"
-            }
+            "pages": [
+              "api-reference/endpoint/metro-area"
+            ]
           },
           {
-            "group": "Public Plan Minute API",
-            "openapi": {
-              "source": "api-reference/public_plan_minute__c.yaml"
-            }
+            "group": "Marketplace Searches API",
+            "pages": [
+              "api-reference/endpoint/marketplace-searches"
+            ]
           },
           {
-            "group": "Updates API",
-            "openapi": {
-              "source": "api-reference/updates.yaml"
-            }
+            "group": "Member Comments API",
+            "pages": [
+              "api-reference/endpoint/member-comments"
+            ]
           }
         ]
       }
@@ -126,8 +113,8 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Dakota Site",
+      "href": "https://www.dakota.com/"
     }
   },
   "contextual": {
