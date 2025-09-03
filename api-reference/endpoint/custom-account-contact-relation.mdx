@@ -1,5 +1,5 @@
 ---
-title: 'Investment API'
+title: 'Custom Account Contact Relation API'
 openapi: 'POST /index.php/api/dakota'
 ---
 
@@ -12,25 +12,18 @@ openapi: 'POST /index.php/api/dakota'
 
 ## Examples
 
-### Count Investment Records
+### Count Custom Account Contact Relation Records
 ```json
 {
-  "module": "investment__c",
+  "module": "custom_accountcontactrelation",
   "count_only": "1"
 }
 ```
 
-### List All Investments
+### List All Custom Account Contact Relations
 ```json
 {
-  "module": "investment__c"
-}
-```
-
-### List Investments with Specific Fields
-```json
-{
-  "module": "investment__c",
+  "module": "custom_accountcontactrelation",
   "filters": {
     "fields": ["name", "createddate", "country__c"],
     "order_by": "name:DESC",
@@ -39,22 +32,17 @@ openapi: 'POST /index.php/api/dakota'
 }
 ```
 
-### Filter By Investment Name (AND Example)
+### Filter By Custom Account Contact Relation Name
 ```json
 {
-  "module": "investment__c",
+  "module": "custom_accountcontactrelation",
   "filters": {
     "filter": [
       {
         "$and": [
           {
             "name": {
-              "$contains": "RT"
-            }
-          },
-          {
-            "name": {
-              "$contains": "Test"
+              "$contains": "Adams"
             }
           }
         ]
@@ -64,10 +52,10 @@ openapi: 'POST /index.php/api/dakota'
 }
 ```
 
-### Filter By Created Date (Last 30 Days)
+### Filter By CreatedDate
 ```json
 {
-  "module": "investment__c",
+  "module": "custom_accountcontactrelation",
   "filters": {
     "filter": [
       {
@@ -81,15 +69,15 @@ openapi: 'POST /index.php/api/dakota'
 }
 ```
 
-### Filter By Fund Balance
+### Filter By Account Equals
 ```json
 {
-  "module": "investment__c",
+  "module": "custom_accountcontactrelation",
   "filters": {
     "filter": [
       {
-        "fund_balance__c": {
-          "$gt": "1000000"
+        "account__c": {
+          "$equals": "0017600000TLTRkAAP"
         }
       }
     ]

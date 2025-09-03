@@ -27,19 +27,18 @@
             "pages": [
               "fields/Account",
               "fields/Contact",
-              "fields/Conference",
-              "fields/Investment",
-              "fields/InvestmentStrategy",
-              "fields/ManagerPresentation",
               "fields/MetroArea",
               "fields/MarketplaceSearches",
-              "fields/MemberComments"
+              "fields/Investment",
+              "fields/PublicPlanMinutes",
+              "fields/Conference",
+              "fields/ManagerPresentation"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API Reference",
         "groups": [
           {
             "group": "Authentication API",
@@ -60,30 +59,6 @@
             ]
           },
           {
-            "group": "Conference API",
-            "pages": [
-              "api-reference/endpoint/conference"
-            ]
-          },
-          {
-            "group": "Investment API",
-            "pages": [
-              "api-reference/endpoint/investment"
-            ]
-          },
-          {
-            "group": "Investment Strategy API",
-            "pages": [
-              "api-reference/endpoint/investment-strategy"
-            ]
-          },
-          {
-            "group": "Manager Presentation API",
-            "pages": [
-              "api-reference/endpoint/manager-presentation"
-            ]
-          },
-          {
             "group": "Metro Area API",
             "pages": [
               "api-reference/endpoint/metro-area"
@@ -96,9 +71,63 @@
             ]
           },
           {
+            "group": "Investment API",
+            "pages": [
+              "api-reference/endpoint/investment"
+            ]
+          },
+          {
+            "group": "Public Plan Minutes API",
+            "pages": [
+              "api-reference/endpoint/public-plan-minutes"
+            ]
+          },
+          {
+            "group": "Conference API",
+            "pages": [
+              "api-reference/endpoint/conference"
+            ]
+          },
+          {
+            "group": "Manager Presentation API",
+            "pages": [
+              "api-reference/endpoint/manager-presentation"
+            ]
+          },
+          {
+            "group": "Investment Strategy API",
+            "pages": [
+              "api-reference/endpoint/investment-strategy"
+            ]
+          },
+          {
+            "group": "Dakota Content API",
+            "pages": [
+              "api-reference/endpoint/dakota-content"
+            ]
+          },
+          {
+            "group": "Updates API",
+            "pages": [
+              "api-reference/endpoint/updates"
+            ]
+          },
+          {
             "group": "Member Comments API",
             "pages": [
               "api-reference/endpoint/member-comments"
+            ]
+          },
+          {
+            "group": "Dakota News API",
+            "pages": [
+              "api-reference/endpoint/dakota-news"
+            ]
+          },
+          {
+            "group": "Custom Account Contact Relation API",
+            "pages": [
+              "api-reference/endpoint/custom-account-contact-relation"
             ]
           }
         ]
@@ -107,8 +136,8 @@
     ]
   },
   "logo": {
-    "light": "/dakota.png",
-    "dark": "/dakota.png"
+    "light": "/dakota_light.png",
+    "dark": "/dakota_dark.png"
   },
   "navbar": {
     "primary": {

@@ -1,5 +1,5 @@
 ---
-title: 'Conference API'
+title: 'Dakota Content API'
 openapi: 'POST /index.php/api/dakota'
 ---
 
@@ -12,37 +12,30 @@ openapi: 'POST /index.php/api/dakota'
 
 ## Examples
 
-### Count Conference Records
+### Count Dakota Content Records
 ```json
 {
-  "module": "conference__c",
+  "module": "dakota_content__c",
   "count_only": "1"
 }
 ```
 
-### List All Conferences
+### List All Dakota Content
 ```json
 {
-  "module": "conference__c"
-}
-```
-
-### List Conferences with Specific Fields
-```json
-{
-  "module": "conference__c",
+  "module": "dakota_content__c",
   "filters": {
-    "fields": ["name", "createddate", "format__c"],
+    "fields": ["name", "createddate"],
     "order_by": "name:DESC",
     "max_num": "-1"
   }
 }
 ```
 
-### Filter By Conference Name (AND Example)
+### Filter By Dakota Content Name
 ```json
 {
-  "module": "conference__c",
+  "module": "dakota_content__c",
   "filters": {
     "filter": [
       {
@@ -54,7 +47,7 @@ openapi: 'POST /index.php/api/dakota'
           },
           {
             "name": {
-              "$contains": "Conf"
+              "$contains": "Test"
             }
           }
         ]
@@ -64,26 +57,39 @@ openapi: 'POST /index.php/api/dakota'
 }
 ```
 
-### Filter By Category and Format
+### Filter By Type Equals
 ```json
 {
-  "module": "conference__c",
+  "module": "dakota_content__c",
   "filters": {
     "filter": [
       {
         "$and": [
           {
-            "category__c": {
-              "$equals": "brokers"
-            }
-          },
-          {
-            "format__c": {
-              "$equals": "Virtual"
+            "type__c": {
+              "$equals": "Key Account"
             }
           }
         ]
       }
     ]
   }
-} 
+}
+```
+
+### Filter By CreatedDate
+```json
+{
+  "module": "dakota_content__c",
+  "filters": {
+    "filter": [
+      {
+        "createddate": {
+          "$dateRange": "last_30_days"
+        }
+      }
+    ],
+    "max_num": "-1"
+  }
+}
+``` 
