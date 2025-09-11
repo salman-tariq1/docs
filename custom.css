@@ -2,3 +2,103 @@ textarea.text-playground-input {
   min-height: 45dvh !important;  /* default bigger height */
   line-height: 1.5;              /* make text spacing nicer */
 }
+
+/* Image watermark styling - responsive breakpoints */
+
+/* Mobile (default) - smaller */
+body::after {
+  content: "";
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  right: -60px;
+  width: 120px;
+  height: 140px;
+  background-image: url('/watermark.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0.3;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Small screens (640px+) */
+@media (min-width: 640px) {
+  body::after {
+    display: block;
+    right: -50px;
+    width: 160px;
+    height: 180px;
+    opacity: 0.3;
+  }
+}
+
+/* Medium screens (768px+) */
+@media (min-width: 768px) {
+  body::after {
+    display: block;
+    right: -45px;
+    width: 200px;
+    height: 230px;
+    opacity: 0.3;
+  }
+}
+
+/* Large screens (1024px+) */
+@media (min-width: 1024px) {
+  body::after {
+    display: block;
+    right: -40px;
+    width: 250px;
+    height: 290px;
+    opacity: 0.3;
+  }
+}
+
+/* Extra large screens (1280px+) */
+@media (min-width: 1280px) {
+  body::after {
+    display: block;
+    bottom: -10px;
+    right: -40px;
+    width: 400px;
+    height: 560px;
+    opacity: 0.8;
+  }
+}
+
+/* 2XL screens (1536px+) - smaller than original */
+@media (min-width: 1536px) {
+  body::after {
+    display: block;
+    bottom: -25px;
+    right: -40px;
+    width: 400px;
+    height: 600px;
+    opacity: 0.8;
+  }
+}
+
+.card {
+  background-color: #edf8fd;
+}
+
+.code-block > div {
+  background-color: #f2f2f2;
+}
+
+.tryit-button {
+  background-color: #0A9CE8;
+}
+
+
+html.light .code-group > div:nth-child(1) {
+  background-color: #ffffff !important;
+}
+
+html.light .code-group > div:nth-child(2) > div > div {
+  background-color: #f2f2f2 !important;
+}
+ 
