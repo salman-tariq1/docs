@@ -1,3 +1,57 @@
+/* IMMEDIATE HIDE - Runs before JavaScript */
+/* Hide everything by default, show only when authenticated */
+body {
+  visibility: hidden !important;
+}
+
+body.authenticated {
+  visibility: visible !important;
+}
+
+/* Hide all navigation elements immediately */
+nav, header, aside, footer, 
+[role="navigation"], [role="complementary"],
+.sidebar, .navigation, .nav, .header, .aside, .footer,
+[data-testid="sidebar"], [data-testid="header"], [data-testid="navigation"],
+.mintlify-sidebar, .mintlify-header, .mintlify-navigation,
+.navbar, .nav-bar, .side-nav, .side-navigation,
+.main-nav, .primary-nav, .secondary-nav {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Show content only when authenticated */
+body.authenticated nav,
+body.authenticated header,
+body.authenticated aside,
+body.authenticated footer,
+body.authenticated [role="navigation"],
+body.authenticated [role="complementary"],
+body.authenticated .sidebar,
+body.authenticated .navigation,
+body.authenticated .nav,
+body.authenticated .header,
+body.authenticated .aside,
+body.authenticated .footer,
+body.authenticated [data-testid="sidebar"],
+body.authenticated [data-testid="header"],
+body.authenticated [data-testid="navigation"],
+body.authenticated .mintlify-sidebar,
+body.authenticated .mintlify-header,
+body.authenticated .mintlify-navigation {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  width: auto !important;
+  overflow: visible !important;
+}
+
+/* Original styles */
 textarea.text-playground-input {
   min-height: 45dvh !important;  /* default bigger height */
   line-height: 1.5;              /* make text spacing nicer */
@@ -51,8 +105,8 @@ body::after {
   body::after {
     display: block;
     right: -40px;
-    width: 250px;
-    height: 290px;
+    width: 200px;
+    height: 230px;
     opacity: 0.3;
   }
 }
@@ -93,7 +147,6 @@ body::after {
   background-color: #0A9CE8;
 }
 
-
 html.light .code-group > div:nth-child(1) {
   background-color: #ffffff !important;
 }
@@ -101,4 +154,6 @@ html.light .code-group > div:nth-child(1) {
 html.light .code-group > div:nth-child(2) > div > div {
   background-color: #f2f2f2 !important;
 }
- 
+nav.text-sm {
+ display: flex !important;
+}
